@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="../css/style.css">
+<html lang="en">
+<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+        <script>
+            function getParams() {
+                let idx = document.URL.indexOf('?');
+                let art_id = '';
+                if (idx != -1) {
+                    result = document.URL.substring(idx+1, document.URL.length).split('&')[0].split('=')[1];
+                    if (!Number.isNaN(Number(result.slice(1)))) {
+                        art_id = result;
+                    }
+                }
+                return art_id;
+            }
+            articleID = getParams();
+        </script>
+
+    </head>
+    <script>
+
+        let articlePath = articleID+'.json';
+        try {
+            getArticle();
+        } catch (error) {
+            console.log("Broken link");
+        } finally {
+            articlePath = '../templates/article.json';
+        }
+
+        async function getArticle() {
+            const response = await fetch(articlePath);
+            const data = await response.json();
+
+            document.getElementById('title').textContent = data.title;
+            document.getElementById('authors').textContent = data.authors;
+            document.getElementById('citeas').textContent = data.citeas;
+            document.getElementById('abstract').textContent = data.abstract;
+            document.getElementById('doi').href = data.URL;
+            document.getElementById('doi').textContent = data.DOI;
+        }
+
+    </script>
+    <main class="article">
+        <h2 class="h2-article elm-article">
+            <span id="title"></span>
+        </h2>
+
+        <h4 class="h4-article elm-article">
+           <u><span id="authors"></span></u>
+        </h4>
+
+        <h6 class="h6-article elm-article">
+            <span id="citeas"></span>
+        </h6>
+
+        <section class="abstract-article elm-article">
+            <span id="abstract"></span>
+        </section>
+
+        <section class="DOI-article elm-article">
+            DOI:
+            <a class="a-article elm-article" id="doi" target="_blank"></a>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18pt;
+    font-family: Perpetua, 'Times-New-Roman', Times, serif;
+}
+
+a:visited{
+    color: blue;
+}
+
+body {
+    background-color: white;
+    text-align: center;
+    margin-top: 2%;
+}
+
+main.home-header {
+    h1 {
+        font-size: 32pt;
+    }
+}
+
+section.home-publications {
+    margin-top: 1rem;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 1rem;
+    padding: 0.25rem;
+    background-image: linear-gradient(to bottom, Purple, LavenderBlush);
+    box-shadow:  0px 6px 5px 5px rgba(128, 0, 128, 0.3);
+    h2 {
+        padding: 2%;
+        font-size: 24pt;
+        margin: 1rem;
+        color: white;
+    }
+
+    .publication {
+        background: white;
+        padding: 2%;
+        margin: 1rem;
+    }
+
+    #p-doi {
+        margin: 1em;
+        margin-left: 0;
+    }
+}
+
+section.home-section {
+    padding: 0.2rem;
+}
+
+main.article {
+    margin: 5%;
+
+    .elm-article {
+        margin-top: 1rem;
+    }
+
+    #title {
+        font-size: 28pt;
+    }
+
+    #citeas {
+        font-size: 16pt;
+    }
+
+    .abstract-article {
+        text-align: justify;
+        margin-left: 12%;
+        margin-right: 12%;
+        font-size: 24pt;
+    }
+}

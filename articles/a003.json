@@ -1,0 +1,9 @@
+{
+    "id": "a003",
+    "title": "Probing interfacial effects with thermocapillary flows",
+    "authors": "M. Maza-Cuello, C. Frétigny, and L. Talini",
+    "citeas": "Phys. Rev. Fluids 7, 124003 (2022)",
+    "abstract": "We report on the thinning of supported liquid films driven by thermocapillarity. The liquids are oil films, of initial thicknesses of a few tens of microns. A local and moderate heating of the glass substrate on which they are spread induces a thermocapillary flow, which allows the formation of ultrathin films. We show that, within a given time range, the thinning dynamics of submicron-thick films is governed by the thermocapillary stress. It results in a simple dependency of the thickness profiles with time, which is evidenced by the collapse of the data onto a master curve. The master curve only depends on the liquid properties and on the thermal gradient, and allows a measurement of the latter. As the films further thin down to thicknesses within the range of molecular interactions, a deviation from the master curve appears. Although all investigated oils are supposedly fully wetting glass, the nature of the deviation differs between alkanes and silicone oils. We attribute the observed behaviors to differing signs of disjoining pressures, and this picture is confirmed by numerical resolution of the thin-film equation. We suggest thermocapillary flows can be used to finely probe molecular interactions.",
+    "URL": "https://doi.org/10.1103/PhysRevFluids.7.124003",
+    "DOI": "10.1103/PhysRevFluids.7.124003"
+}
