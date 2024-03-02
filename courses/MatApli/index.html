@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.1/lib/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="sketch.js"></script>
+    <title>Matemática Aplicada</title>
+</head>
+<body>
+    <h1>Matemática aplicada</h1>
+
+    <h2>Apuntes de parametrización</h2>
+
+    <div>
+    <h4>Nota preliminar</h4>
+    <p>
+        Estos apuntes pretenden dar una visión introductoria de la parametrización de curvas y superficies,
+        y por lo tanto no aspiran a ser formalmente exactos o completos.
+        Las visualizaciones están realizadas con <a href="https://p5js.org">p5.js</a>, y en ocasiones los resultados mostrados están redondeados para facilitar la comprensión. 
+    </p>
+    </div>
+
+    <div>
+    <h4>Funciones</h4>
+    <p>
+        Una función es una regla \(f(x)\) que, dado un número \(x\), devuelve un único número \(y = f(x)\).
+        Para poder visualizar las funciones, se contruye su gráfica en el plano cartesiano:
+        dado un valor \(x_i\), pintamos sobre el plano el punto \(P_i = \big(x_i,y_i\big) = \big(x_i,f(x_i)\big)\).
+    </p>
+
+    <p>
+        Las coordenadas de cualquier punto \(P_i\) conseguido de esta manera cumplen que \(y_i - f(x_i) = 0\).
+        En principio, la cantidad \(F(x,y) = y - f(x)\) se puede calcular para cualquier punto del plano \(P\),
+        pero la igualdad \(y - f(x) = 0\) <em>sólo se cumplirá</em> si \(P\) está en el gráfico de \(f(x)\).
+        Es decir, los puntos del plano que pertenecen a la gráfica de \(f(x)\) son aquellos que satisfacen la ecuación
+        $$
+            F(x,y) = 0.
+        $$
+        <em> Desplaza el ratón sobre el gráfico para comprobarlo.</em>
+    </p>
+
+    <div class="p5js" id="S1_function_graph"></div>
+
+    </div>
+
+    <div>
+        <h4>Las funciones tienen limitaciones</h4>
+        <p>
+            Las funciones \(y = f(x)\) no pueden representar trazos que se cierren sobre sí mismos o que pasen varias veces sobre un mismo valor de \(x\).
+            Por ejemplo, aunque se pueden dibujar muchas (¡infinitas!) líneas rectas a partir de la función \(y = mx + n\),
+            es imposible representar una línea vertical. <br><br>
+            <em>¿Puedes conseguir que la línea roja coincida con la morada?</em>
+        </p>
+
+        <div class="p5js" id="S2_line_a"></div>
+
+        <p>
+            Si, por el contrario, utilizamos una ecuación en dos variables \(F(x,y) = 0\), 
+            se consigue una mayor flexibilidad para trazar curvas más interesantes. <br><br>
+            <em>¿Y ahora?</em>
+        </p>
+
+        <div class="p5js" id="S2_line_b"></div>
+
+    </div>
+
+</body>
+</html>
