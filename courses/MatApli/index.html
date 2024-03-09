@@ -7,23 +7,23 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.1/lib/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="classes.js"></script>
     <script language="javascript" type="text/javascript" src="sketch.js"></script>
-    <title>Matemática Aplicada</title>
+    <title>Representación de curvas</title>
 </head>
 <body>
-    <h1>Matemática aplicada</h1>
-
-    <h2>Apuntes de parametrización</h2>
+    <h1>Representación de curvas</h1>
 
     <div>
     <h4>Nota preliminar</h4>
     <p>
-        Estos apuntes pretenden dar una visión introductoria de la parametrización de curvas y superficies,
+        Estos apuntes pretenden dar una visión introductoria de la parametrización de curvas,
         y por lo tanto no aspiran a ser formalmente exactos o completos.
         Las visualizaciones están realizadas con <a href="https://p5js.org">p5.js</a>, y en ocasiones los resultados mostrados están redondeados para facilitar la comprensión. 
     </p>
     </div>
 
+    <!-- ================================================================== -->
     <div>
     <h4>Funciones</h4>
     <p>
@@ -31,7 +31,6 @@
         Para poder visualizar las funciones, se contruye su gráfica en el plano cartesiano:
         dado un valor \(x_i\), pintamos sobre el plano el punto \(P_i = \big(x_i,y_i\big) = \big(x_i,f(x_i)\big)\).
     </p>
-
     <p>
         Las coordenadas de cualquier punto \(P_i\) conseguido de esta manera cumplen que \(y_i - f(x_i) = 0\).
         En principio, la cantidad \(F(x,y) = y - f(x)\) se puede calcular para cualquier punto del plano \(P\),
@@ -41,32 +40,99 @@
             F(x,y) = 0.
         $$
         <em> Desplaza el ratón sobre el gráfico para comprobarlo.</em>
+        <div class="p5js" id="S1_function_graph"></div>
     </p>
-
-    <div class="p5js" id="S1_function_graph"></div>
-
     </div>
 
+    <!-- ================================================================== -->
     <div>
-        <h4>Las funciones tienen limitaciones</h4>
-        <p>
-            Las funciones \(y = f(x)\) no pueden representar trazos que se cierren sobre sí mismos o que pasen varias veces sobre un mismo valor de \(x\).
-            Por ejemplo, aunque se pueden dibujar muchas (¡infinitas!) líneas rectas a partir de la función \(y = mx + n\),
-            es imposible representar una línea vertical. <br><br>
-            <em>¿Puedes conseguir que la línea roja coincida con la morada?</em>
-        </p>
-
-        <div class="p5js" id="S2_line_a"></div>
-
-        <p>
-            Si, por el contrario, utilizamos una ecuación en dos variables \(F(x,y) = 0\), 
-            se consigue una mayor flexibilidad para trazar curvas más interesantes. <br><br>
-            <em>¿Y ahora?</em>
-        </p>
-
-        <div class="p5js" id="S2_line_b"></div>
-
+    <h4>Las funciones tienen limitaciones</h4>
+    <p>
+        Las funciones \(y = f(x)\) no pueden representar trazos que se cierren sobre sí mismos o que pasen varias veces sobre un mismo valor de \(x\).
+        Por ejemplo, aunque se pueden dibujar muchas (¡infinitas!) líneas rectas a partir de la función \(y = mx + n\),
+        es imposible representar así una línea vertical. 
+        <br><br>
+        <em>¿Puedes conseguir que la línea roja coincida con la morada?</em>
+    </p>
+    <div class="p5js" id="S2_line_a"></div>
+    <p>
+        Si, por el contrario, utilizamos una ecuación en dos variables \(F(x,y) = 0\), 
+        se consigue una mayor flexibilidad para trazar curvas más interesantes. 
+        <br><br>
+        <em>¿Y ahora?</em>
+    </p>
+    <div class="p5js" id="S2_line_b"></div>
     </div>
 
+    <!-- ================================================================== -->
+    <div>
+    <h4>Cónicas</h4>
+    <p>
+        Uno de los cambios más sencillos que pueden hacerse es aumentar la potencia de \(y\) 
+        para tener ahora \(y^2\).
+        Por ejemplo, la ecuación de una circunferencia de radio \(a\) se escribe
+        $$
+            x^2 + y^2 = a^2,
+        $$
+        que puede generalizarse para dar lugar a una elipse de semiejes \(a\) y \(b\)
+        $$
+            \left(\frac xa\right)^2 + \left(\frac yb\right)^2 = 1.
+        $$
+    </p>
+    <div class="p5js" id="S3a_elipse"></div>
+    <p>
+        Cambiando un signo obtenemos una hipérbola:
+        $$
+            \left(\frac xa\right)^2 - \left(\frac yb\right)^2 = 1.
+        $$
+    </p>
+    <div class="p5js" id="S3b_hiperbola"></div>
+    </div>
+
+    <!-- ================================================================== -->
+    <div>
+    <h4>Coordenadas polares</h4>
+    <p>
+        Las coordenadas cartesianas habituales construyen el plano a partir de rectas verticales y horizontales.
+        Una recta vertical está dada por la ecuación \(x = x_0\), esto es, está compuesta por puntos \(P = (x_0, y)\) donde \(y\) puede tomar cualquier valor.
+        De manera análoga, una recta horizontal está dada por la ecuación \(y = y_0\).
+        La intersección de las rectas \(V: x = x_0\) y \(H : y = y_0\) es un punto \(P_0 = (x_0,y_0)\). 
+        <br><br>
+        <em>Una recta horizontal y otra vertical definen un punto.</em>
+    </p>
+    <div class="p5js" id="S4a_cartesianas"></div>
+    <p>
+        Hay otra manera de pensar el plano: utilizando circunferencias y semirectas que pasan por el origen.
+        En este caso, en vez de unas posiciones \(x_0\) e \(y_0\) sobre los ejes, los números que necesitamos son un radio \(r_0\) para la circunferencia
+        y un ángulo \(\varphi_0\) para elegir la semirecta. 
+        A este tipo de coordenadas \((r_0, \varphi_0)\) formadas por un radio y un ángulo se les llama coordenadas polares. 
+        <br><br>
+        <em>Una circunferencia y una semirecta que nace del origen también.</em>
+    </p>
+    <div class="p5js" id="S4b_polares"></div>
+    <p>
+        Aunque las representaciones cartesianas y polares conciben el plano de maneras distintas,
+        <em>el plano sigue siendo el mismo</em>, sólo cambia la manera en que nombramos los puntos.
+        <br>
+        Si conocemos las coordenadas cartesianas de un punto \(P = (x_0,y_0)\), 
+        su representación polar \(P = (r_0,\varphi_0)\)se calcula como
+        $$
+        \begin{cases}
+            r_0 = \sqrt{x_0 + y_0}\\
+            \varphi_0 = \text{atan}\left(\frac{y0}{x0}\right)
+        \end{cases}
+        $$
+        y en el caso contrario, tenemos
+        $$
+        \begin{cases}
+            x_0 = r_0\cos(\varphi_0)\\
+            y_0 = r_0\sin(\varphi_0)
+        \end{cases}
+        .
+        $$
+        Estos <em>cambios de coordenadas</em> vienen del hecho de que 
+        \(x_0\) e \(y_0\) son los catetos de un triángulo rectángulo cuya hipotenusa es \(r_0\).
+    </p>
+    </div>
 </body>
 </html>
