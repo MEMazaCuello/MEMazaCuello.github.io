@@ -78,9 +78,15 @@ var S2a = function( S ) {
     nS.size(2*BORDER);
     w2 = S.width/2;
     h2 = S.height/2;
+
+    /* */
+    updateDrawing()
+
+    mS.changed(updateDrawing)
+    nS.changed(updateDrawing)
   };
 
-  S.draw = function() {
+  function updateDrawing() {
     S.background(255);
 
     // Fixed
@@ -105,7 +111,7 @@ var S2a = function( S ) {
     S.stroke('red')
     S.line(-w2, m*w2 - n, w2, -m*w2 - n)
     S.pop()
-  };
+  }
 };
 var sketch2a = new p5(S2a, 'S2_line_a');
 
@@ -132,9 +138,15 @@ var S2b = function( S ) {
     cS.size(2*BORDER);
     w2 = S.width/2;
     h2 = S.height/2;
+
+    updateDrawing()
+
+    aS.changed(updateDrawing)
+    bS.changed(updateDrawing)
+    cS.changed(updateDrawing)
   };
 
-  S.draw = function() {
+  function updateDrawing() {
     S.background(255);
 
     // Fixed
@@ -206,9 +218,16 @@ var S3a = function( S ) {
     h2 = S.height/2;
 
     S.angleMode(S.DEGREES);
+
+    /*-----------------------------------------*/
+    // Initiliaze drawing
+    updateDrawing();
+
+    aS.changed(updateDrawing)
+    bS.changed(updateDrawing)
   };
 
-  S.draw = function() {
+  function updateDrawing() {
     S.background(255);
 
     // Fixed
@@ -225,8 +244,9 @@ var S3a = function( S ) {
     a = aS.value();
     b = bS.value();
     for (let t = ti; t < tf + dt; t += dt) {
-      S.point(a * S.cos(t), b * S.sin(360  - t))
+      S.point(  a * S.cos(t), b * S.sin(t))
     }
+    S.translate(-w2,-h2);
   };
 };
 var sketch3a = new p5(S3a, 'S3a_elipse');
@@ -262,9 +282,17 @@ var S3b = function( S ) {
     h2 = S.height/2;
 
     S.angleMode(S.DEGREES);
+
+    /*-----------------------------------------*/
+    // Initiliaze drawing
+    updateDrawing()
+
+    // Update drawing only when slider has changed
+    aS.changed(updateDrawing)
+    bS.changed(updateDrawing)
   };
 
-  S.draw = function() {
+  function updateDrawing() {
     S.background(255);
 
     // Fixed
@@ -286,7 +314,8 @@ var S3b = function( S ) {
       S.point(  a * cosh, b * sinh)
       S.point(- a * cosh, b * sinh)
     }
-  };
+    S.translate(-w2,-h2);
+  }
 };
 var sketch3b = new p5(S3b, 'S3b_hiperbola');
 
@@ -430,60 +459,123 @@ var sketch4b = new p5(S4b, 'S4b_polares');
 /*****************************************************************************/
 /*****************************************************************************/
 
-// /* Parametrizing: Ellipse */
-// var S3a = function( S ) { 
-//   // Constants
-//   const WIDTH  = 400;
-//   const HEIGHT = 400;
-//   const BORDER = 80;
-//   const a = 250;
-//   const b = 100;
+/* Parametrizing: rose */
+var S5a = function( S ) { 
+  // Constants
+  const WIDTH  = 400;
+  const HEIGHT = 400;
+  const BORDER = 80;
+  const a = 250;
 
-//   let tS;
-//   let w2, h2;
+  let kS;
+  let w2, h2;
 
-//   let p = new Point(0,0);
+  S.setup = function() {
+    S.createCanvas(WIDTH + 2*BORDER, HEIGHT + 2*BORDER);
+    S.textSize(25);
 
-//   S.setup = function() {
-//     S.createCanvas(WIDTH + 2*BORDER, HEIGHT + 2*BORDER);
-//     S.textSize(25);
+    kS = S.createSlider(0, 25, 4, 1);
+    kS.position(-2*BORDER, 0);
+    kS.size(2*BORDER);
 
-//     tS = S.createSlider(0, 360, 30, 1);
-//     tS.position(-2*BORDER, 0);
-//     tS.size(2*BORDER);
+    w2 = S.width/2;
+    h2 = S.height/2;
 
-//     w2 = S.width/2;
-//     h2 = S.height/2;
+    S.angleMode(S.DEGREES);
 
-//     S.angleMode(S.DEGREES);
-//   };
+    /*-----------------------------------------*/
+    // Initiliaze drawing
+    updateDrawing();
 
-//   S.draw = function() {
-//     S.background(255);
+    // Update drawing only when slider value has changed
+    kS.changed(updateDrawing)
+  };
 
-//     // Fixed
-//     drawAxes(S,w2,h2)
+  function updateDrawing() {
+    S.background(255);
 
-//     // Dynamic
-//     let t = tS.value();
+    // Fixed
+    drawAxes(S,w2,h2)
+    S.text("k", kS.x + kS.width + 5, kS.y + 20);
 
-//     p.x = a * S.cos(t)
-//     p.y = b * S.sin(360 - t)
+    // Dynamic
+    S.push()
+    S.translate(w2,h2);
+    let k = kS.value();
+    S.noStroke();
+    S.fill('purple')
+    for (let t = 0; t < 360; t+=0.02) {
+      let r = a * S.cos(k*t)
+      let x = r * S.cos(t);
+      let y = r * S.sin(t);
+      S.circle(x,y,2)
+    }
+    S.pop();
 
-//     S.translate(w2,h2);
-//     S.ellipseMode(S.RADIUS);
-//     S.noFill();
-//     S.strokeWeight(3);
-//     S.stroke('purple');
-//     S.circle(0,0,a);
-//     S.circle(0,0,b);
-//     S.noStroke();
-//     S.fill('red');
-//     S.circle(p.x,p.y,5);
-//   };
-// };
-// var sketch3a = new p5(S3a, 'S3a_elipse');
+    S.fill(0)
+    S.text("ρ(φ) = \cos(kφ)", S.width - 2 * BORDER, 30);
+  };
+};
+var sketch5a = new p5(S5a, 'S5a_rose');
 
+/* Parametrizing: star */
+var S5b = function( S ) { 
+  // Constants
+  const WIDTH  = 400;
+  const HEIGHT = 400;
+  const BORDER = 80;
+  const a = 250;
+
+  let kS;
+  let w2, h2;
+
+  S.setup = function() {
+    S.createCanvas(WIDTH + 2*BORDER, HEIGHT + 2*BORDER);
+    S.textSize(25);
+
+    kS = S.createSlider(0, 25, 5, 1);
+    kS.position(-2*BORDER, 0);
+    kS.size(2*BORDER);
+
+    w2 = S.width/2;
+    h2 = S.height/2;
+
+    S.angleMode(S.DEGREES);
+
+    /*-----------------------------------------*/
+    // Initiliaze drawing
+    updateDrawing()
+
+    // Only update if slider is changed (instead of using noLoop())
+    kS.changed(updateDrawing)
+  };
+
+  function updateDrawing() {
+    S.background(255);
+
+    // Fixed
+    drawAxes(S,w2,h2)
+    S.text("k", kS.x + kS.width + 5, kS.y + 20);
+
+    // Dynamic
+    S.push()
+    S.translate(w2,h2);
+    let k = kS.value();
+    S.noStroke();
+    S.fill('purple')
+    for (let t = 0; t < 360; t+=0.02) {
+      let r = a / (2 + S.cos(k*t));
+      let x = r * S.cos(t);
+      let y = r * S.sin(t);
+      S.circle(x,y,2)
+    }
+    S.pop();
+
+    S.fill(0)
+    S.text("ρ(φ) = 1/(2 + \cos(kφ))", S.width - 3 * BORDER, 30);
+  }
+};
+var sketch5b = new p5(S5b, 'S5b_conic');
 
 /*****************************************************************************/
 /*****************************************************************************/
@@ -499,12 +591,3 @@ function drawAxes(S,w,h) {
   S.line(0,-h,0,h)
   S.pop()
 }
-
-// function curve2D(S, fx, fy, ti, tf, n) {
-//   S.stroke('purple')
-//   let dt = S.abs(tf - ti) / n 
-//   for (let t = ti; t < tf + dt; t += dt) {
-//     S.circle(fx(t), fy(t), 5)
-//   }
-// }
-

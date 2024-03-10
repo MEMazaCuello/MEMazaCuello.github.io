@@ -19,7 +19,9 @@
     <p>
         Estos apuntes pretenden dar una visión introductoria de la parametrización de curvas,
         y por lo tanto no aspiran a ser formalmente exactos o completos.
-        Las visualizaciones están realizadas con <a href="https://p5js.org">p5.js</a>, y en ocasiones los resultados mostrados están redondeados para facilitar la comprensión. 
+        Las visualizaciones están realizadas con 
+        <a href="https://p5js.org" target="_blank" rel="noopener noreferrer">p5.js</a>, 
+        y en ocasiones los resultados mostrados están redondeados para facilitar la comprensión. 
     </p>
     </div>
 
@@ -133,6 +135,32 @@
         Estos <em>cambios de coordenadas</em> vienen del hecho de que 
         \(x_0\) e \(y_0\) son los catetos de un triángulo rectángulo cuya hipotenusa es \(r_0\).
     </p>
+    <p>
+        Las coordenadas polares nos permiten simplificar la expresión de algunas curvas, 
+        especialmente aquellas que se cierran sobre sí mismas.
+        En vez de tener una ecuación cartesiana \(F(x,y) = 0\),
+        escribiremos una ecuación en coordenadas polares \(F(r,\varphi) = 0\).
+        Por ejemplo, una circunferencia tiene radio \(a\) constante, por lo tanto en coordenadas polares su ecuación es sencillamente
+        $$
+            r = a.
+        $$
+        Para obtener otras curvas polares basta variar el radio con el ángulo según una función \(r = \rho(\varphi)\).
+    </p>
+    <p>
+        <em>Por ejemplo, flores</em>
+    </p>
+    <div class="p5js" id="S5a_rose"></div>
+    <p>
+        <em>o estrellas.</em>
+    </p>
+    <div class="p5js" id="S5b_conic"></div>
     </div>
+    <p>
+    <em>
+        La página web 
+        <a href="https://mathcurve.com/courbes2d/courbes2d.shtml"  target="_blank" rel="noopener noreferrer">Math curve</a> 
+        contiene un extenso catálogo de curvas con su ecuación, construcción, parametrización y relación con otras curvas.
+    </em>
+    </p>
 </body>
 </html>
