@@ -1,0 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Perpetua, 'Times-New-Roman', Times, serif;
+}
+
+main {
+  text-align: center;
+  font-size: x-large;
+}
+
+canvas {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 5%;
+  position: relative;
+}
