@@ -48,12 +48,18 @@ function draw() {
   stroke(255,98,0);
   line(Obj.x,Obj.y,0,Obj.y);
   line(Obj.x,Obj.y,0,0);
-  line(0,Obj.y,f.x,f.y);
-  if(Img.x < Obj.x){
-    stroke(255,98,0, 50);
+  if (f.x < 0) {
+    line(0,Obj.y,-f.x,2*Obj.y);
+    stroke(255,98,0,75);
+    line(0,Obj.y,f.x,f.y);
+  } else {
+    line(0,Obj.y,f.x,f.y);
+    if(Img.x < 0){
+      stroke(255,98,0,75);
+    }
+    line(0,Obj.y,Img.x,Img.y);
+    line(Obj.x,Obj.y,Img.x,Img.y);
   }
-  line(0,Obj.y,Img.x,Img.y);
-  line(Obj.x,Obj.y,Img.x,Img.y);
   pop();
   
   strokeWeight(2);
@@ -148,5 +154,5 @@ function mouseReleased(){
 }
 
 function mouseIn(P) {
-  return dist(mouseX - width/2, mouseY - height/2, P.x, P.y) < R
+  return dist(mouseX - width/2, mouseY - height/2, P.x, P.y) < 2*R
 }
