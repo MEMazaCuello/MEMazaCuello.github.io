@@ -30,9 +30,10 @@ section.home-publications {
     padding: 0.25rem;
     background-image: linear-gradient(to bottom, Purple, LavenderBlush);
     box-shadow:  0px 6px 5px 5px rgba(128, 0, 128, 0.3);
+    border-radius: 10pt;
     h2 {
         padding: 2%;
-        font-size: 24pt;
+        font-size: 26pt;
         margin: 1rem;
         color: white;
     }
@@ -41,6 +42,7 @@ section.home-publications {
         background: white;
         padding: 2%;
         margin: 1rem;
+        border-radius: 10pt;
     }
 
     #p-doi {
