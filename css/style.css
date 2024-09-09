@@ -6,8 +6,13 @@
     font-family: Perpetua, 'Times-New-Roman', Times, serif;
 }
 
-a:visited{
-    color: blue;
+a {
+    color: #400E40;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 body {
