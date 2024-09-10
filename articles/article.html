@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-
+        <title>M. Maza-Cuello</title>
         <script>
             function getParams() {
                 let idx = document.URL.indexOf('?');
@@ -21,10 +21,8 @@
             }
             articleID = getParams();
         </script>
-
     </head>
     <script>
-
         let articlePath = articleID+'.json';
         try {
             getArticle();
@@ -45,7 +43,6 @@
             document.getElementById('doi').href = data.URL;
             document.getElementById('doi').textContent = data.DOI;
         }
-
     </script>
     <main class="article">
         <h2 class="h2-article elm-article">
