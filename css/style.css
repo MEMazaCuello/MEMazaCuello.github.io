@@ -111,9 +111,30 @@ section.home-publications {
 }
 
 /* Home: Lectures */
+section.home-outreach {
+    padding: 0.25rem;
+    background-image: linear-gradient(to bottom, DarkSlateBlue, AliceBlue);
+    box-shadow:  0px 6px 5px 5px rgba(0, 23, 128, 0.3);
+    border-radius: 10pt;
+    h2 {
+        padding: 2%;
+        font-size: 26pt;
+        margin: 1rem;
+        color: white;
+    }
+
+    .outreach {
+        background: white;
+        padding: 2%;
+        margin: 1rem;
+        border-radius: 10pt;
+    }
+}
+
+/* Home: Lectures */
 section.home-lectures {
     padding: 0.25rem;
-    background-image: linear-gradient(to bottom, ForestGreen, HoneyDew);
+    background-image: linear-gradient(to bottom, DarkGreen, HoneyDew);
     box-shadow:  0px 6px 5px 5px rgba(55, 128, 0, 0.3);
     border-radius: 10pt;
     h2 {
