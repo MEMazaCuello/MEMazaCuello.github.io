@@ -21,10 +21,24 @@ body {
     margin-top: 2%;
 }
 
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    padding: 0.5%;
+
+    p {
+        font-size: 12pt;
+    }
+}
+
 /* Home */
 main.home-header {
     h1 {
-        font-size: 32pt;
+        font-size: 28pt;
     }
 }
 
@@ -36,7 +50,7 @@ section.home-section {
     margin-top: 1rem;
     margin-left: 20%;
     margin-right: 20%;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 /* Hide the images by default */
@@ -84,6 +98,37 @@ section.home-section {
     to {opacity: 1}
 }
 
+/* Home: About */
+section.home-about {
+    padding: 0.25rem;
+    background-image: linear-gradient(to bottom, rgb(241, 150, 39), SeaShell);
+    box-shadow:  0px 6px 5px 5px rgba(198, 116, 1, 0.3);
+    border-radius: 10pt;
+    h2 {
+        padding: 2%;
+        font-size: 24pt;
+        margin: 0.25rem;
+        color: white;
+    }
+
+    .about {
+        background: white;
+        padding: 2%;
+        margin: 0.5rem;
+        border-radius: 10pt;
+
+        p {
+            text-align: justify;
+            margin-bottom: 0.5em;
+        }
+
+        a {
+            color: brown;
+        }
+    }
+
+}
+
 /* Home: Publications */
 section.home-publications {
     padding: 0.25rem;
@@ -92,15 +137,15 @@ section.home-publications {
     border-radius: 10pt;
     h2 {
         padding: 2%;
-        font-size: 26pt;
-        margin: 1rem;
+        font-size: 24pt;
+        margin: 0.25rem;
         color: white;
     }
 
     .publication {
         background: white;
         padding: 2%;
-        margin: 1rem;
+        margin: 0.5rem;
         border-radius: 10pt;
     }
 
@@ -110,7 +155,7 @@ section.home-publications {
     }
 }
 
-/* Home: Lectures */
+/* Home: Outreach */
 section.home-outreach {
     padding: 0.25rem;
     background-image: linear-gradient(to bottom, DarkSlateBlue, AliceBlue);
@@ -118,15 +163,15 @@ section.home-outreach {
     border-radius: 10pt;
     h2 {
         padding: 2%;
-        font-size: 26pt;
-        margin: 1rem;
+        font-size: 24pt;
+        margin: 0.25rem;
         color: white;
     }
 
     .outreach {
         background: white;
         padding: 2%;
-        margin: 1rem;
+        margin: 0.5rem;
         border-radius: 10pt;
     }
 }
@@ -139,15 +184,15 @@ section.home-lectures {
     border-radius: 10pt;
     h2 {
         padding: 2%;
-        font-size: 26pt;
-        margin: 1rem;
+        font-size: 24pt;
+        margin: 0.25rem;
         color: white;
     }
 
     .lecture {
         background: white;
         padding: 2%;
-        margin: 1rem;
+        margin: 0.5rem;
         border-radius: 10pt;
     }
 }
