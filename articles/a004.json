@@ -2,7 +2,7 @@
     "id": "a004",
     "title": "Efficient transport controlled by biharmonic frictional driving",
     "authors": "M. Maza-Cuello and M. Maza",
-    "citeas": "TBA (accepted in PRL)",
+    "citeas": "TBA (accepted in PRL 09/09/2024)",
     "abstract": "Dry friction has been proposed as a rectifying mechanism allowing mass transport over a vibrating surface, even when vibrations are horizontal and unbiased. It has been suggested that the drift velocity will always saturate when the energy of the input oscillation increases, leading to a vanishing efficiency that would hinder the applicability of this phenomenon. Contrary to this conjecture, in this work we experimentally demonstrate that, by carefully controlling the forcing oscillations, this system can maintain a finite transport efficiency for any input energy. A minimal friction model explains the observed dependencies of the drift velocity on the signal parameters in the case of biharmonic base oscillations, which can be extended to obtain efficiency estimates for any periodic excitation.",
     "URL": "https://journals.aps.org/prl/accepted/af07eYb2D1d1fe8af8b570457759b9bd9e3795ab0",
     "DOI": "https://journals.aps.org/prl/accepted/af07eYb2D1d1fe8af8b570457759b9bd9e3795ab0"
