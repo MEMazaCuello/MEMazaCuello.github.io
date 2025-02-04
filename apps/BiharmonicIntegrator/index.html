@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <main>
+      <div style="display: flex;">
+        <div style="flex: 1;">
+          <div id="buttons-holder">
+            <button id="playButton" onclick="playOrStop()">Stop</button>
+            <div class="slider-container">
+              <p style="flex: 1;">$$f$$</p>
+              <input type="range" min="1" max="100" value="20" step="1" id="sliderFreq" onchange="updateFreq()" class="slider" style="flex: 2;">
+              <p style="flex: 2; margin-left: 10pt;" id="sliderFreqValue">20 Hz</p>
+            </div>
+            <div class="slider-container">
+              <p style="flex: 1;">$$\Gamma$$</p>
+              <input type="range" min="0.1" max="20.0" value="1.0" step="0.01" id="sliderGamma" onchange="updateGamma()" class="slider" style="flex: 2;">
+              <p style="flex: 2; margin-left: 10pt;" id="sliderGammaValue">1.0</p>
+            </div>
+            <div class="slider-container">
+              <p style="flex: 1;">$$\varphi$$</p>
+              <input type="range" min="0" max="360" value="0" step="1" id="sliderPhi" onchange="updatePhi()" class="slider" style="flex: 2;">
+              <p style="flex: 2; margin-left: 10pt;" id="sliderPhiValue">0 º</p>
+            </div>
+            <div class="slider-container">
+              <p style="flex: 1;">$$\rho$$</p>
+              <input type="range" min="0.0" max="1.0" value="0.5" step="0.01" id="sliderRho" onchange="updateRho()" class="slider" style="flex: 2;">
+              <p style="flex: 2; margin-left: 10pt;" id="sliderRhoValue">0.5</p>
+            </div>
+            <div class="slider-container">
+              <p style="flex: 1;">$$\mu$$</p>
+              <input type="range" min="0.1" max="1.0" value="0.2" step="0.01" id="sliderMu" onchange="updateMu()" class="slider" style="flex: 2;">
+              <p style="flex: 2; margin-left: 10pt;" id="sliderMuValue">0.2</p>
+            </div>
+            <div class="slider-container">
+              <p style="flex: 1;">$$\beta$$</p>
+              <input type="range" min="0.1" max="1.0" value="0.9" step="0.01" id="sliderBeta" onchange="updateBeta()" class="slider" style="flex: 2;">
+              <p style="flex: 2; margin-left: 10pt;" id="sliderBetaValue">0.9</p>
+            </div>
+            <div class="slider-container">
+              <p style="flex: 1;">$$v_C$$</p>
+              <input type="range" min="0.00001" max="10.0" value="0.0001" step="0.00001" id="slidervC" onchange="updatevC()" class="slider" style="flex: 2;">
+              <p style="flex: 2; margin-left: 10pt;" id="slidervCValue">0.0001 mm/s</p>
+            </div>
+            <div class="slider-container">
+              <p style="flex: 1;">$$v_S$$</p>
+              <input type="range" min="0.00001" max="0.1" value="0.005" step="0.00001" id="slidervS" onchange="updatevS()" class="slider" style="flex: 2;">
+              <p style="flex: 2; margin-left: 10pt;" id="slidervSValue">0.005 mm/s</p>
+              <script src="buttons.js"></script>
+            </div>
+            </div>
+          </div>
+        <div style="flex: 4; margin-top: 5%;">
+          <div id="sketch-holder">
+            <script src="Point.js"></script>
+            <script src="Signals.js"></script>
+            <script src="FrictionCurves.js"></script>
+            <script src="Integrator.js"></script>
+            <script src="sketch.js"></script>
+          </div>
+          <div style="width: 25%; margin-left: auto; margin-right: auto;">
+            <p style="position:relative; left: -120px;">$$v_D = $$</p>
+            <p style="position:relative; top: -45pt;"id="vD">0 mm/s</p>
+            <p style="position:relative; top: -700px; left: -520px;">$$v/(\Gamma/\omega)$$</p>
+            <p style="position:relative; top: -478px; left: -540px;">$$0$$</p>
+            <p style="position:relative; top: -508px; left: -50px;">$$t/T$$</p>
+            <p style="position:relative; top: -583px; left: 530px;">$$x_B$$</p>
+            <p style="position:relative; top: -903px; left: 250px;">$$x$$</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
