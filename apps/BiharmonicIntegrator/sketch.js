@@ -3,7 +3,7 @@ const TOTAL_HEIGHT = 500;
 const EXT_X = 250;
 const EXT_Y = 250;
 
-const GRAVITY = 9810;
+const GRAVITY = 9810; // mm/s^2
 
 let integrator;
 
@@ -12,10 +12,10 @@ function setup() {
     canvas.parent('sketch-holder');
     let p = new Point(0,0,20);
 
-    let sineSignal = new SineSignal(1.0,20.0);
+    //let sineSignal = new SineSignal(1.0,20.0);
     let biharmonic = new BiharmonicSignal(1.0,20.0,0.0*PI,0.5);
 
-    let coulomb = new CoulombFriction(0.2, 1.0);
+    //let coulomb = new CoulombFriction(0.2, 1.0);
     let stribeck = new CoulombStribeck(0.15,0.9,0.001/GRAVITY,0.005/GRAVITY);
 
     integrator = new Integrator(p, biharmonic, stribeck, 2*EXT_X, 2*EXT_Y);

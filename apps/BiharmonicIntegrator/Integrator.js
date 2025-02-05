@@ -50,6 +50,9 @@ class Integrator
         else
         {
             this.idx = 0;
+            this.trail[this.idx] = this.p.v;
+            this.history[this.idx] = this.p.x;
+
             this.vD = mean(this.trail);
             const p_vD = document.getElementById("vD");
             p_vD.innerHTML = round(-GRAVITY * this.vD,2) + " mm/s";
