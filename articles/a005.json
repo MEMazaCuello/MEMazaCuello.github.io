@@ -1,0 +1,9 @@
+{
+    "id": "a005",
+    "title": "Sliding dynamics induced by periodic frictional driving",
+    "authors": "M. Maza-Cuello and D. Maza",
+    "citeas": "Friction (2025)",
+    "abstract": "We investigate the frictional dynamics experienced by a free mass placed on a harmonically oscillating surface. Unlike traditional setups used to study frictional instabilities such as stick‒slip oscillations, where a mass attached to a wall by a spring is pulled by a conveyor belt, our experimental configuration represents a genuine single-degree-of-freedom system. Hence, the resulting dynamical states are determined solely by the interactions between the surfaces, without the influence of any external parameters. The dynamic response of the mass provides valuable insights for characterizing both the static and dynamic friction coefficients, as well as their roles in the limit cycle when the mass moves relative to the base. We demonstrate the versatility of our setup by examining various materials and investigating surfaces with different textures, including both smooth and rough surfaces, which lead to distinct dynamic states. We compare the experimental results with those of a minimal model designed for frictional systems, confirming the effectiveness of our setup in studying the transition between stick and slip regimes. Additionally, we analyze a basic numerical description to validate the applicability of our method in fixing the numerical model parameters.",
+    "URL": "https://doi.org/10.26599/FRICT.2025.9441131",
+    "DOI": "10.26599/FRICT.2025.9441131"
+}
